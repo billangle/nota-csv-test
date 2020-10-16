@@ -3,7 +3,7 @@ import { CSVReader } from 'react-papaparse'
 
 const buttonRef = React.createRef()
 
-export default class CSVReader1 extends Component {
+export class CSVReader1 extends Component {
   handleOpenDialog = (e) => {
     // Note that the ref is set async, so it might be null at some point
     if (buttonRef.current) {
