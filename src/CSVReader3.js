@@ -17,6 +17,11 @@ export class CSVReader3 extends Component {
     console.log(data)
     console.log('---------------------------')
   }
+/*
+  handleComplete = (results, file) => {
+    console.log("Parsing complete:", results, file);
+  }
+  */
 
   render() {
     return (
@@ -26,8 +31,11 @@ export class CSVReader3 extends Component {
           onDrop={this.handleOnDrop}
           onError={this.handleOnError}
           noClick
-          addRemoveButton
-          onRemoveFile={this.handleOnRemoveFile}
+          config={{
+              complete: (results, file) => {
+                console.log("Parsing complete:", results, file);
+              }
+          }}
         >
           <span>Drop CSV file here to upload.</span>
         </CSVReader>
